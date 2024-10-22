@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aplikasi Kasir</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Kasir Web App</h1>
+    <nav>
+      <ul>
+        <li><a href="#" onclick="showSection('daftar-harga')">Daftar Harga</a></li>
+        <li><a href="#" onclick="showSection('transaksi')">Transaksi</a></li>
+        <li><a href="#" onclick="showSection('riwayat-transaksi')">Riwayat Transaksi</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Daftar Harga Section -->
+    <section id="daftar-harga" class="hidden">
+      <h2>Daftar Harga</h2>
+      <button onclick="addProduct()">Tambah Data</button>
+      <table id="product-list">
+        <thead>
+          <tr>
+            <th>Nama Barang</th>
+            <th>Harga</th>
+            <th>Aksi</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    <!-- Transaksi Section -->
+    <section id="transaksi" class="hidden">
+      <h2>Transaksi</h2>
+      <div id="cart">
+        <h3>Keranjang Belanja</h3>
+        <ul id="cart-items"></ul>
+        <button onclick="printNota()">Cetak Nota</button>
+      </div>
+      <div>
+        <h3>Tambah Pesanan</h3>
+        <input type="text" id="item-name" placeholder="Nama Barang">
+        <input type="number" id="item-quantity" placeholder="Jumlah">
+        <button onclick="addToCart()">Tambahkan</button>
+      </div>
+    </section>
+
+    <!-- Riwayat Transaksi Section -->
+    <section id="riwayat-transaksi" class="hidden">
+      <h2>Riwayat Transaksi</h2>
+      <input type="text" id="search-transaction" placeholder="Cari transaksi...">
+      <ul id="transaction-history"></ul>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
